@@ -1,0 +1,191 @@
+create table customer(
+customer_id varchar2(20),
+customer_name varchar2(20),
+c_email varchar2(100),
+c_phone varchar2(20),
+C_password varchar2(20),
+DOB date,
+c_state varchar2(20),
+c_city varchar2(20),
+c_streetNo varchar2(20),
+constraint customer_customer_id_pk primary key(customer_id)
+);
+
+create table admin(
+admin_id varchar2(20),
+admin_password varchar2(20)
+);
+
+insert into admin values('admin','admin');
+
+create table branch(
+branch_id varchar2(20),
+b_capacity number(10),
+b_contact_no varchar2(20),
+b_city varchar2(20),
+b_state varchar2(20),
+b_street_no varchar2(20),
+constraint branch_branch_id_pk primary key(branch_id)
+);
+create table branch_restock(
+branch_id varchar2(20),
+b_capacity number(10),
+b_contact_no varchar2(20),
+b_city varchar2(20),
+b_state varchar2(20),
+b_street_no varchar2(20),
+constraint branch_restock_branch_id_pk primary key(branch_id)
+);
+
+
+CREATE or REPLACE TRIGGER branch_Restock_Trigger
+BEFORE UPDATE OF b_capacity
+ON branch
+FOR EACH ROW
+WHEN (New.b_capacity < 20)
+BEGIN
+INSERT INTO branch_restock VALUES (:old.branch_id,
+:new.b_capacity, :old.b_contact_no, :old.b_city,
+:old.b_state,:old.b_street_no  );
+END;
+
+
+create table employee(
+emp_id varchar2(20),
+emp_name varchar2(10),
+emp_email varchar2(20),
+emp_password varchar2(20),
+emp_phoneno varchar2(20),
+emp_joining_date date,
+emp_position varchar2(20),
+emp_salary number(20),
+branch_id varchar2(20),
+constraint employee_emp_id_pk primary key(emp_id)
+
+
+
+);
+
+create table test_ride
+(
+tr_id varchar2(20),
+v_id varchar2(20),
+customer_id varchar2(20),
+s_time varchar2(20),
+r_time varchar2(20),
+tr_date date,
+action varchar2(20),
+constraint tr_tr_id_pk primary key(tr_id,customer_id,v_id)
+);
+
+
+
+create table car
+(
+    v_id varchar2(20),
+    status varchar2(20),
+    brannd varchar2(20),
+    model varchar2(20),
+    color varchar2(20),
+    manufacturing_country varchar2(20),
+    year varchar2(20),
+    import_date Date,
+    engine_cc varchar2(20),
+    body_type varchar2(20),
+    dimension varchar2(20),
+    Weight varchar2(20),
+    seat varchar2(20),
+    fuel_capacity varchar2(20),
+    top_speed varchar2(20),
+    acceleration varchar2(20),
+    power varchar2(20),
+    fuel_consumtion varchar2(20),
+    milage varchar2(20),
+    price number(10,0),
+    img_dir varchar2(255),
+    branch_id varchar2(20),
+    customer_id varchar2(20),
+    constraint car_car_id_pk primary key(v_id)
+);
+
+create table payment(
+payment_id varchar2(20),
+v_id  varchar2(20),
+payment_method varchar2(20),
+due number(20),
+discount number(20),
+total_cost varchar2(20),
+payment_date date,
+paid_amount number(20),
+
+constraint payement_pk primary key(v_id,payment_id)
+
+
+
+);
+
+create table represents(
+emp_id varchar2(20),
+customer_id varchar2(20),
+r_date date
+
+);
+
+
+create table services(
+service_id varchar2(20),
+v_model varchar2(20),
+reg_no varchar2(20),
+bill number(20),
+customer_id varchar2(20),
+constraint service_service_id_pk primary key(service_id)
+);
+
+
+
+create table give(
+emp_id varchar2(20),
+service_id varchar2(20),
+service_date date
+
+);
+
+
+
+
+
+create table repair(
+service_id varchar2(20),
+part_name varchar2(20),
+r_amount number(20),
+repair_date date
+);
+
+create table maintainance(
+service_id varchar2(20),
+type varchar2(20),
+m_amount number(20),
+maintainance_date date
+);
+
+
+create table engine_diagnosis(
+service_id varchar2(20),
+report varchar2(255),
+ed_amount number(20),
+ed_date date
+);
+
+delete from repair where repair_date=to_date('13-jul-22','dd-mon-yy');
+
+
+
+insert into customer(customer_id,customer_name,c_email,c_phone,DOB,c_state,c_city,c_streetNo) values('cust-001','ha','ha@gmail.com','001001010',TO_DATE('19-APR-2022','DD-MON-YYYY'),'Dhaka','mirpur','s-24');
+insert into branch(branch_id,b_capacity,b_contact_no,b_city,b_state,b_street_no) values('b-001','100','001001011','Dhaka','mirpur','s-25');
+
+
+
+insert into car (v_id,status,brannd,model,color,year,manufacturing_country,import_date,engine_cc,body_type,dimension,weight,seat,fuel_capacity,top_speed,acceleration,power,fuel_consumtion,milage,price,branch_id,customer_id) values('C001','unsold','Audi','Lexus','Black',TO_DATE('19-APR-2022','DD-MON-YYYY'),'America',TO_DATE('19-APR-2022','DD-MON-YYYY'),'1500cc','Sedan','3800 X 1700 X 1400','1000','6','70 L','140 mph','28 mps','617 kw','6 L','30 kmpl','50 lacks','b-001','cust-001');
+
+
+

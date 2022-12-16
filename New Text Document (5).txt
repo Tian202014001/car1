@@ -1,0 +1,7 @@
+update branch set b_capacity=any( select branch_id, count(*) from car group by branch_id);
+
+select branch_id, count(*) from car group by branch_id;
+
+create or replace view available_car (Branch_id,Available_car) as select branch_id, count(*) from car group by branch_id;
+
+update branch available_car set b_capacity=Available_car;

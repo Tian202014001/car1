@@ -1,0 +1,33 @@
+.card-home {
+    background-image: url("https://cdn.shopify.com/s/files/1/0408/5792/7834/files/redux-bg-A-4_522x.jpg") !important;
+    color: white !important;
+  }
+  
+  .cards-icons {
+    background: -webkit-linear-gradient(#5ea7eb, #438dd1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: -10%;
+  }
+  
+  .cards-equipos {
+    background-image: url("https://cdn.shopify.com/s/files/1/0408/5792/7834/files/Better_400x.jpg") !important;
+    color: white !important;
+  }
+  
+  .my__img {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .custom__button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: -33px;
+  }

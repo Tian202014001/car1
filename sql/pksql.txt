@@ -1,0 +1,20 @@
+DECLARE
+var_r_amount number(10);
+var_m_amount number(10);
+var_ed_amount number(10);
+total_amount number(10);
+var_s_id varchar2(50) := 's-001';
+BEGIN
+SELECT sum(r_Amount) INTO var_r_amount FROM repair WHERE
+service_id = var_s_id group by(var_s_id);
+SELECT sum(m_amount) INTO var_m_amount FROM maintainance WHERE
+service_id = var_s_id group by(var_s_id);
+SELECT sum(ed_amount) INTO var_ed_amount FROM engine_diagnosis WHERE
+service_id = var_s_id group by(var_s_id);
+dbms_output.put_line(var_r_amount);
+dbms_output.put_line(var_m_amount);
+dbms_output.put_line(var_ed_amount);
+total_amount:=var_r_amount+var_m_amount+var_ed_amount;
+dbms_output.put_line(total_amount);
+update service set bill=total_amount where service_id='s-001';
+END;

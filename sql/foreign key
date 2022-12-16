@@ -1,0 +1,46 @@
+
+//employee
+alter table employee add constraint employee_branch_id_fk foreign key(branch_id) references branch(branch_id) on delete cascade;
+
+//test_ride
+alter table test_ride add constraint tr_customer_id_fk foreign key(customer_id) references customer(customer_id) on delete cascade;
+
+alter table test_ride add constraint tr_car_id_fk foreign key(v_id) references car(v_id) on delete cascade;
+
+
+//car
+alter table car add constraint car_branch_id_fk foreign key(branch_id) references branch(branch_id) on delete cascade;
+
+alter table car add constraint car_customer_id_fk foreign key(customer_id) references customer(customer_id) on delete cascade ;
+
+
+//payment
+
+alter table payment add constraint payment_payment_id_fk foreign key(v_id) references car(v_id) on delete cascade ;
+
+//represents
+
+alter table represents add constraint represents_employee_id_fk foreign key(emp_id) references employee(emp_id) on delete cascade ;
+alter table represents add constraint represents_customer_id_fk foreign key(customer_id) references customer(customer_id) on delete cascade ;
+
+//service
+
+alter table service add constraint service_customer_id_fk foreign key(customer_id) references customer(customer_id) on delete cascade;
+
+//give
+alter table give add constraint give_employee_id_fk foreign key(emp_id) references employee(emp_id) on delete cascade ;
+alter table give add constraint give_service_id_fk foreign key(service_id) references service(service_id) on delete cascade ;
+
+//repair
+
+alter table repair add constraint repair_service_id_fk foreign key(service_id) references service(service_id) on delete cascade ;
+
+//maintainence
+
+
+alter table  maintainance add constraint maintainance_service_id_fk foreign key(service_id) references service(service_id)on delete cascade  ;
+
+//engine diagnosis
+
+
+alter table  engine_diagnosis add constraint ed_service_id_fk foreign key(service_id) references service(service_id) on delete cascade  ;

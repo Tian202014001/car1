@@ -1,0 +1,262 @@
+insert into car (v_id,status,brannd,model,color,year,manufacturing_country,import_date,engine_cc,body_type,dimension,weight,seat,fuel_capacity,top_speed,acceleration,power,fuel_consumtion,milage,price,branch_id,customer_id) values('C001','unsold','Audi','Lexus','Black',TO_DATE('19-APR-2022','DD-MON-YYYY'),'America',TO_DATE('19-APR-2022','DD-MON-YYYY'),'1500cc','Sedan','3800 X 1700 X 1400','1000','6','70 L','140 mph','28 mps','617 kw','6 L','30 kmpl',5000000,'B00001','Cust-000001');
+insert into car (v_id,status,brannd,model,color,year,manufacturing_country,import_date,engine_cc,body_type,dimension,weight,seat,fuel_capacity,top_speed,acceleration,power,fuel_consumtion,milage,price,branch_id,customer_id) values('C002','unsold','Cadillac','Perodua','White',TO_DATE('19-APR-2022','DD-MON-YYYY'),'America',TO_DATE('19-APR-2022','DD-MON-YYYY'),'1700cc','Wagon','3700 X 1600 X 1300','1000','6','80 L','160 mph','28 mps','630 kw','6 L','30 kmpl',4000000,'B00001','Cust-000002');
+insert into car (v_id,status,brannd,model,color,year,manufacturing_country,import_date,engine_cc,body_type,dimension,weight,seat,fuel_capacity,top_speed,acceleration,power,fuel_consumtion,milage,price,branch_id,customer_id)  values('C003','unsold','BMW','Perodua','Silver',TO_DATE('19-APR-2022','DD-MON-YYYY'),'America',TO_DATE('19-APR-2022','DD-MON-YYYY'),'1600cc','Sedan','3750 X 1700 X 1400','1100','6','80 L','150 mph','32 mps','650 kw','8 L','35 kmpl',6000000,'B00001','Cust-000003');
+insert into car (v_id,status,brannd,model,color,year,manufacturing_country,import_date,engine_cc,body_type,dimension,weight,seat,fuel_capacity,top_speed,acceleration,power,fuel_consumtion,milage,price,branch_id,customer_id)  values('C004','unsold','Chevrolet','Perodua','Black',TO_DATE('19-APR-2022','DD-MON-YYYY'),'Japan',TO_DATE('19-APR-2022','DD-MON-YYYY'),'1700cc','Coupe','3800 X 1700 X 1500','1000','6','70 L','140 mph','32 mps','660 kw','9 L','33 kmpl',4000000,'B00002','Cust-000004');
+
+insert into car (v_id,status,brannd,model,color,year,manufacturing_country,import_date,engine_cc,body_type,dimension,weight,seat,fuel_capacity,top_speed,acceleration,power,fuel_consumtion,milage,price,branch_id,customer_id)  values('C005','unsold','Acura','Perodua','White',TO_DATE('19-APR-2022','DD-MON-YYYY'),'Japan',TO_DATE('19-APR-2022','DD-MON-YYYY'),'1700cc','Hatchback','3700 X 1600 X 1300','1000','6','75 L','155 mph','30 mps','645 kw','8 L','35 kmpl',5000000,'B00002','Cust-000005');
+
+
+
+
+
+insert into branch (branch_id,b_capacity,b_contact_no,b_city,b_state,b_street_no) values ('B00001','200','01714874678','Dhaka','Banani','#7');
+insert into branch (branch_id,b_capacity,b_contact_no,b_city,b_state,b_street_no) values ('B00002','300','01714874678','Dhaka','Uttara','#10');
+insert into branch (branch_id,b_capacity,b_contact_no,b_city,b_state,b_street_no) values ('B00003','300','01714874678','Dhaka','Bashundhara','#5');
+insert into branch (branch_id,b_capacity,b_contact_no,b_city,b_state,b_street_no) values ('B00004','400','01714874678','Dhaka','Gazipur','#11');
+
+
+
+
+
+
+insert into customer (customer_id,customer_name,c_email,c_phone,DOB,c_state,c_city,c_streetNo) values ('Cust-000001','Rahim','rahim@gmail.com','01924354645',TO_DATE('09-APR-1980','DD-MON-YYYY'),'Uttara','Dhaka','#10');
+
+insert into customer (customer_id,customer_name,c_email,c_phone,DOB,c_state,c_city,c_streetNo) values ('Cust-000002','Karim','karim@gmail.com','01923478435',TO_DATE('09-Jan-1985','DD-MON-YYYY'),'Gazipur','Dhaka','#08');
+
+insert into customer (customer_id,customer_name,c_email,c_phone,DOB,c_state,c_city,c_streetNo) values ('Cust-000003','Kamal','kamal@gmail.com','01574734645',TO_DATE('27-APR-1983','DD-MON-YYYY'),'Banani','Dhaka','#18');
+
+insert into customer (customer_id,customer_name,c_email,c_phone,DOB,c_state,c_city,c_streetNo) values ('Cust-000004','Jamal','jamal@gmail.com','01845325645',TO_DATE('04-APR-1985','DD-MON-YYYY'),'Bashundhara','Dhaka','#14');
+
+insert into customer (customer_id,customer_name,c_email,c_phone,DOB,c_state,c_city,c_streetNo) values ('Cust-000005','Roton','roton@gmail.com','01688984345',TO_DATE('02-APR-1980','DD-MON-YYYY'),'Uttara','Dhaka','#12');
+
+
+
+
+
+
+insert into test_ride (tr_id,v_id,customer_id,s_time,r_time,tr_date) values ('TR-001','C001','Cust-000001','10 am','11 am',TO_DATE('11-APR-2023','DD-MON-YYYY'));
+
+insert into test_ride (tr_id,v_id,customer_id,s_time,r_time,tr_date) values ('TR-002','C002','Cust-000001','11 am','12 am',TO_DATE('11-APR-2023','DD-MON-YYYY'));
+
+insert into test_ride (tr_id,v_id,customer_id,s_time,r_time,tr_date) values ('TR-003','C004','Cust-000004','10 am','11 am',TO_DATE('11-APR-2023','DD-MON-YYYY'));
+
+insert into test_ride (tr_id,v_id,customer_id,s_time,r_time,tr_date) values ('TR-001','C005','Cust-000002','10 am','11 am',TO_DATE('12-APR-2023','DD-MON-YYYY'));
+
+insert into test_ride (tr_id,v_id,customer_id,s_time,r_time,tr_date) values ('TR-002','C003','Cust-000003','10 am','11 am',TO_DATE('12-APR-2023','DD-MON-YYYY'));
+
+
+
+
+
+insert into employee 
+(emp_id,emp_name,emp_email,emp_password,emp_phoneno,emp_joining_date,emp_position,emp_salary,branch_id)
+values('emp-001','messi','messi@gmail.com','xyz','01406002505',to_date('20-12-2020','dd-mm-yyyy'),'manager','60000','B00001');
+
+insert into employee 
+(emp_id,emp_name,emp_email,emp_password,emp_phoneno,emp_joining_date,emp_position,emp_salary,branch_id)
+values('emp-002','ronaldo','ronaldo@gmail.com','xzy','01446002505',to_date('20-12-2021','dd-mm-yyyy'),'sales','20000','B00002');
+
+
+insert into employee 
+(emp_id,emp_name,emp_email,emp_password,emp_phoneno,emp_joining_date,emp_position,emp_salary,branch_id)
+values('emp-003','salah','salahgmail.com','hihi','01443002505',to_date('20-12-2019','dd-mm-yyyy'),'sales','20000','B00002');
+
+
+
+insert into employee 
+(emp_id,emp_name,emp_email,emp_password,emp_phoneno,emp_joining_date,emp_position,emp_salary,branch_id)
+values('emp-004','rofik','rofik@gmail.com','hiha','0154002505',to_date('22-12-2019','dd-mm-yyyy'),'sales','20000','B00003');
+
+
+insert into employee 
+(emp_id,emp_name,emp_email,emp_password,emp_phoneno,emp_joining_date,emp_position,emp_salary,branch_id)
+values('emp-005','sattar','sattar@mail.com','hahi','0194002505',to_date('01-01-2016','dd-mm-yyyy'),'mechanic','40000','B00001');
+
+
+
+insert into represents
+(emp_id,customer_id,r_date)values('emp-001','cust-000002',to_date('21-10-2020','dd-mm-yyyy'));
+
+
+insert into represents
+(emp_id,customer_id,r_date)values('emp-002','Cust-000001',to_date('21-10-2021','dd-mm-yyyy'));
+
+
+insert into represents
+(emp_id,customer_id,r_date)values('emp-001','Cust-000004',to_date('21-10-2020','dd-mm-yyyy'));
+
+insert into represents
+(emp_id,customer_id,r_date)values('emp-003','Cust-000003',to_date('21-10-2020','dd-mm-yyyy'));
+
+
+insert into represents
+(emp_id,customer_id,r_date)values('emp-004','Cust-000002',to_date('21-10-2020','dd-mm-yyyy'));
+
+
+
+insert into give
+(emp_id,service_id,service_date)values('emp-001','s-001',to_date('21-10-2020','dd-mm-yyyy'));
+
+
+insert into give
+(emp_id,service_id,service_date)values('emp-002','s-002',to_date('22-12-2020','dd-mm-yyyy'));
+
+insert into give
+(emp_id,service_id,service_date)values('emp-001','s-002',to_date('12-12-2021','dd-mm-yyyy'));
+
+insert into give
+(emp_id,service_id,service_date)values('emp-003','s-003',to_date('12-12-2021','dd-mm-yyyy'));
+
+insert into give
+(emp_id,service_id,service_date)values('emp-004','s-003',to_date('11-12-2019','dd-mm-yyyy'));
+
+insert into service
+(service_id,v_model,reg_no,customer_id) values ('s-001','Perodua','93-7323','Cust-000001');
+
+insert into payment
+(payment_id,v_id,payment_method,discount,payment_date,paid_amount) values('p-1','C001','credit card',10,to_date('22-10-2022','dd-mm-yyyy'),3000000);
+
+
+
+
+
+select car.price-payment.discount from car join payment on car.v_id=payment.v_id;
+
+select price from car where brannd='Audi' and model='Lexus' and color='Black' and engine_cc<='1500cc' and seat='6' and milage='30 kmpl'and fuel_capacity='70 L';
+
+
+select brannd,model from car where price<=5000000
+
+
+select * from car where brannd='Audi' and model='Lexus' and color='Black' and price <=5000000 and engine_cc<='1500cc' and seat='6' and milage='30 kmpl'and fuel_capacity='70 L';
+
+select * from branch natural join car where brannd='Audi' and model='Lexus' and b_state='Banani';
+
+
+
+
+select car.price-payment.discount-payment.paid_amount "DUE" from car join payment on car.v_id=payment.v_id;
+
+
+select customer_id,customer_name,c_email,v_id,brannd,model from customer natural join car
+
+select emp_id,emp_name from employee natural join represents natural join customer
+
+select price from car where brannd='Audi' and model ='Lexus';
+
+select r_time, tr_date,v_id from car3 natural join test_ride 
+
+DECLARE
+var_price number(10);
+var_paid  number(10);
+var_discount  number(10);
+var_due  number(10);
+var_installment  number(10);
+var_c_id varchar2(50) := 'C005';
+BEGIN
+insert into payment
+(payment_id,v_id,payment_method,installment,discount,payment_date,paid_amount) values('p-1','C005','credit card',3,10,to_date('22-10-2022','dd-mm-yyyy'),3000000);
+
+SELECT price INTO var_price FROM car WHERE
+v_id = var_c_id;
+update payment set total_cost=var_price where v_id='C005';
+SELECT discount INTO var_discount FROM payment WHERE
+v_id = var_c_id;
+SELECT installment INTO var_installment FROM payment WHERE
+v_id = var_c_id;
+
+loop
+var_installment:=var_installment-1;
+SELECT paid_amount INTO var_paid FROM payment WHERE
+v_id = var_c_id;
+var_paid:=var_paid+1000000;
+dbms_output.put_line(var_paid);
+update payment set paid_amount=var_paid where v_id='C005';
+SELECT due INTO var_due FROM payment WHERE
+v_id = var_c_id
+var_due:=var_due-1000000;
+update payment set due=var_due where v_id='C005';
+
+EXIT WHEN var_installment  = 3;
+END LOOP;
+
+END;
+
+
+DECLARE
+var_price number(10);
+var_due number(10);
+var_paid_amount number(10);
+var_c_id varchar2(50) := 'C005';
+BEGIN
+SELECT price INTO var_price FROM car WHERE
+v_id = var_c_id;
+
+dbms_output.put_line(var_price);
+update payment set total_cost=var_price where v_id=var_c_id;
+SELECT due INTO var_due FROM payment WHERE
+v_id = var_c_id;
+
+
+update payment set total_cost=var_due where v_id=var_c_id;
+
+END;
+
+
+
+update car set customer_id=''Cust-000003' where v_id='C003'
+
+create or replace view owner("CUSTOMER_ID","CUSTOMER_NAME","C_EMAIL","C_PHONE","C_PASSWORD","DOB","C_STATE","C_CITY","C_STREETNO") as SELECT * FROM customer
+WHERE  EXISTS
+(SELECT * FROM car WHERE
+car.customer_id =customer.customer_id);
+
+create or replace view service_taken("CUSTOMER_ID","service_ID") as SELECT CUSTOMER_ID,service_id  FROM services
+WHERE  EXISTS
+(SELECT customer_id FROM services);
+
+
+create view nothing("CUSTOMER_ID","CUSTOMER_NAME","C_EMAIL","C_PHONE","C_PASSWORD","DOB","C_STATE","C_CITY","C_STREETNO") as SELECT * FROM Customer
+WHERE  EXISTS
+(SELECT customer_id FROM owner natural join service)
+
+
+
+
+create view nothing("CUSTOMER_ID","CUSTOMER_NAME","C_EMAIL","C_PHONE","C_PASSWORD","DOB","C_STATE","C_CITY","C_STREETNO") as SELECT * FROM Customer
+WHERE  not EXISTS
+(SELECT * FROM car WHERE
+car.customer_id =customer.customer_id) and not exists (SELECT * FROM service WHERE
+service.customer_id =customer.customer_id)
+
+
+
+
+
+
+DECLARE
+var_r_amount number(10);
+var_m_amount number(10);
+var_ed_amount number(10);
+total_amount number(10);
+var_s_id varchar2(50) := 's-001';
+BEGIN
+SELECT sum(r_Amount) INTO var_r_amount FROM repair WHERE
+service_id = var_s_id group by(var_s_id);
+SELECT sum(m_amount) INTO var_m_amount FROM maintainance WHERE
+service_id = var_s_id group by(var_s_id);
+SELECT sum(ed_amount) INTO var_ed_amount FROM engine_diagnosis WHERE
+service_id = var_s_id group by(var_s_id);
+dbms_output.put_line(var_r_amount);
+dbms_output.put_line(var_m_amount);
+dbms_output.put_line(var_ed_amount);
+total_amount:=var_r_amount+var_m_amount+var_ed_amount;
+dbms_output.put_line(total_amount);
+update service set bill=total_amount where service_id='s-001';
+END;
+
+
+
+
+
+
